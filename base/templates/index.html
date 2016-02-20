@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table table-hover table-bordered">
+        <tr>
+            <td>Type</td>
+            <td>Index Name</td>
+            <td>Table Name</td>
+            <td>DDL Statement</td>
+        </tr>
+        {% for table in tables %}
+            <tr>
+                <td>{{ table[0] }}</td>
+                <td>{{ table[1] }}</td>
+                <td>{{ table[2] }}</td>
+                <td>{{ table[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
