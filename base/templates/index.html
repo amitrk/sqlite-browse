@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    <table class="table table-hover table-bordered">
-        <tr>
-            <td>Type</td>
-            <td>Index Name</td>
-            <td>Table Name</td>
-            <td>DDL Statement</td>
-        </tr>
-        {% for table in tables %}
-            <tr>
-                <td>{{ table[0] }}</td>
-                <td>{{ table[1] }}</td>
-                <td>{{ table[2] }}</td>
-                <td>{{ table[3] }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>Object Type</th>
+                    <th>Object Name</th>
+                </tr>
+                {% for obj in db_objects %}
+                    <tr>
+                        <td class="text-capitalize col-lg-3">{{ obj[0] }}</td>
+                        <td><a href="{{url_for('show_object', object_name=obj[1])}}">{{ obj[1] }}</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
 {% endblock %}
