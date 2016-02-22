@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#details">DB Object : {{object_name}}</a></li>
-    <li><a data-toggle="tab" href="#query">Query Data</a></li>
+<div class="tabbable">
+    <ul class="nav nav-tabs" data-tabs="tabs">
+    <li class="active"><a href="#details" role="tab" data-toggle="tab">DB Object : {{object_name}}</a></li>
     </ul>
 
     <div class="tab-content">
@@ -47,8 +47,6 @@
                 </table>
             </section>
         </div>
-        <div id="query" class="tab-pane fade">
-        <p>Here you can query data for db object {{object_name}}</p>
-        </div>
     </div>
+</div>    
 {% endblock %}
