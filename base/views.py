@@ -8,7 +8,7 @@ def page_not_found_handler(error):
 
 @app.route('/')
 def index():
-    conn = sqlite3.connect('appdata.db')
+    conn = sqlite3.connect(app.config['SQLITE_DB_FILE'])
     cur = conn.execute("SELECT type, tbl_name FROM sqlite_master WHERE type='table'")
     query_results = cur.fetchall()
     cur.close()

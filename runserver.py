@@ -1,4 +1,5 @@
 from base import app
+from cli_opts import process_opts
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    process_opts(app)
